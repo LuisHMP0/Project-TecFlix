@@ -20,6 +20,7 @@ public class Filme {
     @Transient
     private Integer anoLancamento;
 
-
-
+    public boolean getId() {
+        return getId();
+    }
 }

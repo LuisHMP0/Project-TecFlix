@@ -24,7 +24,7 @@ public class FilmeService {
     }
 
     public Filme atualizar(Filme filme){
-        if(filme.getId()==null){
+        if(filme.getId()){
             throw new RuntimeException("Filme sem ID");
         }
         return repository.save(filme);
