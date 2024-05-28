@@ -2,8 +2,13 @@ package br.com.fujideia.iesp.tecback.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDate;
 
+@Setter
+@Getter
 @Entity
 @Data
 public class Usuario {
@@ -36,6 +41,5 @@ public class Usuario {
     public void setId(Long id) {
     }
 
-    // Getters and Setters
 }
 
