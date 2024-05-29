@@ -17,6 +17,11 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @PostMapping
+    public Usuario cadastrarUsuario(@RequestBody Usuario usuario) { // O @RequestBody indica que o objeto usuário será preenchido com os dados do corpo da requisição HTTP POST.
+        return usuarioService.cadastrarUsuario(usuario);
+    }
+
     @GetMapping // Listar todos usuarios
     public List<Usuario> listarUsuarios() {
         return usuarioService.listarUsuarios();

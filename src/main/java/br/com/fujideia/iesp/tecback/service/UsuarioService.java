@@ -13,7 +13,7 @@ import java.util.Optional;
 public class UsuarioService {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    public UsuarioRepository usuarioRepository;
 
     public Usuario cadastrarUsuario(Usuario usuario) { return usuarioRepository.save(usuario); }
 
