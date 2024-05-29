@@ -25,10 +25,6 @@ public class FilmeController {
         return service.atualizar(filme);
     }
 
-    @GetMapping
-    public List<Filme> listarTodos(){
-        return service.listarTodos();
-    }
 
     @GetMapping("/{id}")
     public Filme buscarPorId(@PathVariable Integer id){

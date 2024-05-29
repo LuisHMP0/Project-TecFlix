@@ -30,14 +30,6 @@ public class Usuario {
 
     private String cpfCnpj;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cartao_id", referencedColumnName = "id")
-    private Cartao cartao;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "endereco_id", referencedColumnName = "id")
-    private Endereco endereco;
-
     public void setId(Long id) {
     }
 

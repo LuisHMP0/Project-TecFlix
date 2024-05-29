@@ -8,6 +8,7 @@ import br.com.fujideia.iesp.tecback.repository.UsuarioRepository;
 import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @Service
 public class UsuarioService {
 
