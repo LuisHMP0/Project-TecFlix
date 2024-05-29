@@ -56,5 +56,11 @@ public class UsuarioController {
         return ResponseEntity.ok(usuarioAtualizado);
     }
 
+    // DELETAR USUARIO
+    @DeleteMapping("/{id}")
+    public void excluirUsuario(@PathVariable Long id) {
+        usuarioService.excluirUsuario(id);
+    }
+
 }
 
