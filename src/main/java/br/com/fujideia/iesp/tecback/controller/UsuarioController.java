@@ -1,5 +1,6 @@
 package br.com.fujideia.iesp.tecback.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,6 +9,7 @@ import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.service.UsuarioService;
 import java.util.List;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {
