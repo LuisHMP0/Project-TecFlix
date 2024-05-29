@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import br.com.fujideia.iesp.tecback.model.Usuario;
 import br.com.fujideia.iesp.tecback.service.UsuarioService;
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -22,11 +23,26 @@ public class UsuarioController {
         return usuarioService.cadastrarUsuario(usuario);
     }
 
+    //LISTAR USUARIOS
     @GetMapping // Listar todos usuarios
     public List<Usuario> listarUsuarios() {
         return usuarioService.listarUsuarios();
     }
 
+
+    //BUSCAR PELO ID
+    @GetMapping("/{id}")
+    public ResponseEntity<Usuario> buscarUsuarioPorId(@PathVariable Long id) {
+        Optional<Usuario> usuario = usuarioService.buscarUsuarioPorId(id);
+        if (usuario.isPresent()) {
+            return ResponseEntity.ok(usuario.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+
+    // ATUALIZAR USUARIO
     @PutMapping("/{id}")
     public ResponseEntity<Usuario> atualizarUsuario(@PathVariable Long id, @RequestBody Usuario usuario) {
         // Verificar se o usuário existe
