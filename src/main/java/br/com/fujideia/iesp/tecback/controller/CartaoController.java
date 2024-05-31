@@ -36,4 +36,16 @@ public class CartaoController {
     public List<Cartao> listarTodos(){
         return cartaoService.listarTodos();
     }
+
+    // Buscando por id
+    @GetMapping("/{id}")
+    public Cartao buscarPorId(@PathVariable Integer id){
+        return cartaoService.buscarPorId(id);
+    }
+
+    // Deletando cartao por id
+    @DeleteMapping("/{id}")
+    public void excluirPorId(@PathVariable Integer id){
+        cartaoService.excluir(id);
+    }
 }
