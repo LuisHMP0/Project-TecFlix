@@ -5,11 +5,11 @@ import br.com.fujideia.iesp.tecback.repository.SerieRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+
 import java.util.List;
 
 @AllArgsConstructor
 @Service
-
 public class SerieService {
 
     private SerieRepository repository;
@@ -18,12 +18,8 @@ public class SerieService {
         return repository.save(serie);
     }
 
-    public static List<Serie> listarTodos(){
-        return SerieService.findAll();
-    }
-
-    private static List<Serie> findAll() {
-        return null;
+    public List<Serie> listarTodos(){
+        return repository.findAll();
     }
 
     public Serie atualizar(Serie serie){
@@ -34,12 +30,10 @@ public class SerieService {
     }
 
     public Serie buscarPorId(Integer id) {
-        return null;
+        return repository.findById(id).orElse(null);
     }
 
     public void excluir(Integer id){
-        SerieRepository.deleteById(id);
+        repository.deleteById(id);
     }
-
-
 }

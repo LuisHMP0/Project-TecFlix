@@ -1,6 +1,5 @@
 package br.com.fujideia.iesp.tecback.controller;
 
-import br.com.fujideia.iesp.tecback.model.Cartao;
 import br.com.fujideia.iesp.tecback.model.Serie;
 import br.com.fujideia.iesp.tecback.service.SerieService;
 import jakarta.validation.Valid;
@@ -23,11 +22,12 @@ public class SerieController {
 
     @GetMapping
     public List<Serie> listarTodos(){
-        return SerieService.listarTodos();
+        return service.listarTodos();
     }
 
-    @PutMapping
-    public Serie atualizar(@RequestBody Serie serie){
+    @PutMapping("/{id}")
+    public Serie atualizar(@PathVariable Integer id, @RequestBody Serie serie){
+        serie.setId(id);
         return service.atualizar(serie);
     }
 
@@ -36,8 +36,8 @@ public class SerieController {
         return service.buscarPorId(id);
     }
 
+    @DeleteMapping("/{id}")
     public void excluirPorId(@PathVariable Integer id){
         service.excluir(id);
     }
-
 }
