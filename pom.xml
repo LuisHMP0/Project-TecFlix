@@ -70,8 +70,13 @@
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 			<version>4.1.0</version>
 		</dependency>
+        <dependency>
+            <groupId>br.com.fujideia.iesp</groupId>
+            <artifactId>tecback</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
 
-	</dependencies>
+    </dependencies>
 
 	<build>
 		<plugins>

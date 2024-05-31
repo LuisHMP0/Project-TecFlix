@@ -20,4 +20,7 @@ public class Cartao {
     @JoinColumn(name = "usuario_id", nullable = false)
     private Usuario usuario;
 
+    public String getNumero() {
+        return numero;
+    }
 }
