@@ -9,9 +9,11 @@ import lombok.Setter;
 @Setter
 @Entity
 public class Filme {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String titulo;
     private String descricao;
     private String genero;
@@ -24,8 +26,11 @@ public class Filme {
     @Transient
     private Integer anoLancamento;
 
+    public Integer getId() {
+        return id;
+    }
 
-    public boolean getId() {
-        return getId();
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

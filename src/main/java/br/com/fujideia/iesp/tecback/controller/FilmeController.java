@@ -20,11 +20,16 @@ public class FilmeController {
         return service.salvar(filme);
     }
 
-    @PutMapping
-    public Filme atualizar(@RequestBody Filme filme){
-        return service.atualizar(filme);
+    @GetMapping
+    public List<Filme> listarTodos(){
+        return service.listarTodos();
     }
 
+    @PutMapping("/{id}")
+    public Filme atualizar(@PathVariable Integer id, @RequestBody Filme filme){
+        filme.setId(id);
+        return service.atualizar(filme);
+    }
 
     @GetMapping("/{id}")
     public Filme buscarPorId(@PathVariable Integer id){
@@ -35,5 +40,4 @@ public class FilmeController {
     public void excluirPorId(@PathVariable Integer id){
         service.excluir(id);
     }
-
 }
