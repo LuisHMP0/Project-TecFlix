@@ -62,5 +62,11 @@ public class UsuarioController {
         usuarioService.excluirUsuario(id);
     }
 
+    // RF7 - Ordenando usuarios por nome
+    @GetMapping("/ordenados")
+    public List<Usuario> listarUsuariosOrdenados() {
+        return usuarioService.listarUsuariosOrdenadosPorNome();
+    }
+
 }
 

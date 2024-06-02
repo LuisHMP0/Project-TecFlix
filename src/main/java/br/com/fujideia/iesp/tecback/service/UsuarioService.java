@@ -26,5 +26,9 @@ public class UsuarioService {
     public Usuario atualizarUsuario(Usuario usuario) { return usuarioRepository.save(usuario); }
 
     public void excluirUsuario(Long id) { usuarioRepository.deleteById(id); }
+
+    public List<Usuario> listarUsuariosOrdenadosPorNome() {
+        return usuarioRepository.findAllByOrderByNomeCompletoAsc();
+    }
 }
 
