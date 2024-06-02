@@ -21,7 +21,19 @@ Aqui criamos uma classe UsuarioModel (com seus respectivos campos necessários),
 - Atualização de Usuário por ID (PUT) `/usuarios/{id}`
 - Remoção de usuário por ID (DELETE) `/usuarios/{id}`
 
-Uma vez com a API funcionando basta colocar `localhost:8080/` e a requisição que deseja fazer.
+Uma vez com a API rodando basta colocar `localhost:8080/` e a requisição que deseja fazer.
+
+### RF3
+
+No requisito funcional três, fizemos praticamente a mesma coisa que fizemos no RF1 e adicionamos ao CartãoController esses endpoints: 
+
+- Criar Cartão (POST) `/cartao`
+- Atualizar Cartão (PUT) `/cartao`
+- Listar Todos os Cartões (GET) `/cartao`
+- Buscar Cartão por ID (GET) `/cartao/{id}`
+- Excluir Cartão por ID (DELETE) `/cartao/{id}`
+
+Novamente, uma vez com a API rodando basta colocar `localhost:8080/` e a requisição que deseja fazer.
 
 ## Tecnologias Utilizadas
 
