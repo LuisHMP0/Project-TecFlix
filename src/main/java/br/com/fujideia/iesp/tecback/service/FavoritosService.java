@@ -28,8 +28,10 @@ public class FavoritosService {
     private FavoritosRepository favoritosRepository;
 
     public Favoritos adicionarFilmeAFavoritos(Long usuarioId, Long filmeId) {
-        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-        Filme filme = filmeRepository.findById(Math.toIntExact(filmeId)).orElseThrow(() -> new RuntimeException("Filme não encontrado"));
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        Filme filme = filmeRepository.findById(Math.toIntExact(filmeId))
+                .orElseThrow(() -> new RuntimeException("Filme não encontrado"));
 
         Favoritos favorito = new Favoritos();
         favorito.setUsuario(usuario);
@@ -39,8 +41,10 @@ public class FavoritosService {
     }
 
     public Favoritos adicionarSerieAFavoritos(Long usuarioId, Long serieId) {
-        Usuario usuario = usuarioRepository.findById(usuarioId).orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
-        Serie serie = serieRepository.findById(Math.toIntExact(serieId)).orElseThrow(() -> new RuntimeException("Série não encontrada"));
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        Serie serie = serieRepository.findById(Math.toIntExact(serieId))
+                .orElseThrow(() -> new RuntimeException("Série não encontrada"));
 
         Favoritos favorito = new Favoritos();
         favorito.setUsuario(usuario);
@@ -58,5 +62,19 @@ public class FavoritosService {
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
 
         return favoritosRepository.findByUsuario(usuario);
+    }
+
+    // RF6 ->
+
+    public List<Favoritos> listarFilmesFavoritosPorUsuario(Long usuarioId) {
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        return favoritosRepository.findByUsuarioAndFilmeIsNotNull(usuario);
+    }
+
+    public List<Favoritos> listarSeriesFavoritosPorUsuario(Long usuarioId) {
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+        return favoritosRepository.findByUsuarioAndSerieIsNotNull(usuario);
     }
 }

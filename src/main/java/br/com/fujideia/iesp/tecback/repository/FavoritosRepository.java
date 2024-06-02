@@ -10,4 +10,6 @@ import java.util.List;
 @Service
 public interface FavoritosRepository extends JpaRepository<Favoritos, Long> {
     List<Favoritos> findByUsuario(Usuario usuario);
+    List<Favoritos> findByUsuarioAndFilmeIsNotNull(Usuario usuario);
+    List<Favoritos> findByUsuarioAndSerieIsNotNull(Usuario usuario);
 }
