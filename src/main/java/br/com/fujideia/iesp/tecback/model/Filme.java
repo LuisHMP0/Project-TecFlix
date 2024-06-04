@@ -2,6 +2,7 @@ package br.com.fujideia.iesp.tecback.model;
 
 import br.com.fujideia.iesp.tecback.validator.IdadeRange;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,9 @@ public class Filme {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotBlank
     private String titulo;
+
     private String descricao;
     private String genero;
     private Integer duracao;
