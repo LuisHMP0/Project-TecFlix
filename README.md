@@ -5,11 +5,58 @@ Este é o repositório do projeto da disciplina BackEnd. Neste projeto, desenvol
 - Luís Henrique Marrocos Pinheiro (luishmpuniesp@gmail.com)
 - Thiago Felinto da Costa Cardoso (thiagofelintocd@gmail.com)
 
-## Descrição do Projeto | Como utilizar
+## Como Rodar a API no IntelliJ
+
+Este guia fornece instruções passo a passo sobre como clonar este repositório do GitHub e configurá-lo para rodar a API no IntelliJ IDEA.
+
+#### Clonando o Repositório do GitHub
+
+1. Clone o repositório do GitHub para o seu ambiente local:
+    ```
+    git clone <URL_do_repositório>
+    ```
+
+2. Abra o IntelliJ IDEA.
+
+3. Vá para `File` -> `New` -> `Project from Version Control` -> `Git`.
+
+4. Cole o URL do repositório clonado.
+
+5. Escolha o diretório local onde deseja clonar o repositório.
+
+6. Clique em "Clone" para iniciar o processo de clonagem.
+
+#### Importando o Projeto no IntelliJ
+
+1. Após a conclusão da clonagem, o IntelliJ abrirá o projeto automaticamente.
+
+2. Se isso não acontecer, você pode abrir o projeto manualmente selecionando a pasta do projeto clonado.
+
+#### Configurando a API
+
+1. Dentro do IntelliJ, navegue até o código-fonte da API que deseja executar.
+
+2. Verifique se todas as dependências necessárias estão presentes no arquivo de configuração.
+
+3. Se necessário, instale as dependências executando a resolução de dependências do Maven.
+
+4. Certifique-se de que a configuração de execução esteja correta. Geralmente, você precisa configurar um ponto de entrada para sua aplicação, como uma classe principal ou um arquivo de configuração.
+
+#### Executando a API
+
+1. Após configurar o projeto corretamente, você pode executar a API dentro do IntelliJ.
+
+2. Encontre a opção de execução (geralmente um botão de reprodução) e clique nele para iniciar a API.
+
+3. O IntelliJ mostrará o output do console, onde você poderá ver qualquer mensagem de log ou erro produzido pela aplicação.
+
+Com esses passos, você deve ser capaz de clonar um repositório do GitHub e rodar uma API no IntelliJ sem problemas. Certifique-se de revisar a documentação do projeto para quaisquer instruções específicas de configuração ou execução.
+
+## Descrição do Projeto 
 
 O projeto consiste em uma aplicação em Java (SpringBoot) onde seguimos determinados requisitos para conclusão do projeto, são eles: 
 
-**OBS**: Para fazer essas requisições nós primeiramente rodamos a API localmente e utilizamos o POSTMAN (*Uma empresa global de software que oferece uma plataforma de API para desenvolvedores projetarem, construírem, testarem e colaborarem em APIs.*) para fazer as chamadas HTTP. 
+**OBS**: Para fazer essas requisições nós rodamos a API localmente e utilizamos o POSTMAN (*Uma empresa global de software que oferece uma plataforma de API para desenvolvedores projetarem, construírem, testarem e colaborarem em APIs.*) para fazer as chamadas HTTP. 
 
 ### RF1 - Requisito Funcional 01
 
