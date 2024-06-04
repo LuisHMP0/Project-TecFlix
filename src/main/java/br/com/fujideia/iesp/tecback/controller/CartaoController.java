@@ -30,13 +30,6 @@ public class CartaoController {
         return cartaoService.atualizar(cartao);
     }
 
-
-    // Listar todos cartões
-    @GetMapping
-    public List<Cartao> listarTodos(){
-        return cartaoService.listarTodos();
-    }
-
     // Buscando por id
     @GetMapping("/{id}")
     public Cartao buscarPorId(@PathVariable Integer id){
@@ -45,7 +38,7 @@ public class CartaoController {
 
     // Deletando cartao por id
     @DeleteMapping("/{id}")
-    public void excluirPorId(@PathVariable Integer id){
+    public void deletarCartao(@PathVariable Integer id){
         cartaoService.excluir(id);
     }
 }

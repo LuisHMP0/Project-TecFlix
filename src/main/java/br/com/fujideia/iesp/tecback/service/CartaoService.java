@@ -21,25 +21,19 @@ public class CartaoService {
     }
 
     public Cartao atualizar(Cartao cartao){
-        // Verifica se o cartão existe com base no número
-        if (cartao.getNumero() == null || !cartaoRepository.existsById(cartao.getNumero())) {
-            throw new EntityNotFoundException("Cartão não encontrado ou número de cartão inválido: " + cartao.getNumero());
+        // Verifica se o cartão existe com base no ID
+        if (cartao.getId() == null || !cartaoRepository.existsById(String.valueOf(cartao.getId()))) {
+            throw new EntityNotFoundException("Cartão não encontrado ou ID de cartão inválido: " + cartao.getId());
         }
         return cartaoRepository.save(cartao);
-    }
-
-    public List<Cartao> listarTodos(){
-        return cartaoRepository.findAll();
     }
 
     public Cartao buscarPorId(Integer id){
         return cartaoRepository.findById(String.valueOf(id)).get();
     }
 
-    public void deletarCartao(Integer id){
+    public void excluir(Integer id){
         cartaoRepository.deleteById(String.valueOf(id));
     }
 
-    public void excluir(Integer id) {
-    }
 }

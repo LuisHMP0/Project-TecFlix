@@ -29,7 +29,6 @@ No requisito funcional três, fizemos praticamente a mesma coisa que fizemos no 
 
 - Criar Cartão (POST) `/cartao`
 - Atualizar Cartão (PUT) `/cartao`
-- Listar Todos os Cartões (GET) `/cartao`
 - Buscar Cartão por ID (GET) `/cartao/{id}`
 - Excluir Cartão por ID (DELETE) `/cartao/{id}`
 
