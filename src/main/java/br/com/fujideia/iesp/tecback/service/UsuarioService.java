@@ -1,5 +1,6 @@
 package br.com.fujideia.iesp.tecback.service;
 
+import br.com.fujideia.iesp.tecback.validator.SenhaValidationException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,12 @@ public class UsuarioService {
     @Autowired
     public UsuarioRepository usuarioRepository;
 
-    public Usuario cadastrarUsuario(Usuario usuario) { return usuarioRepository.save(usuario); }
+    public Usuario cadastrarUsuario(Usuario usuario) {
+        if (!usuario.getSenha().equals(usuario.getConfirmarSenha())) {
+            throw new SenhaValidationException("As senhas não coincidem.");
+        }
+        return usuarioRepository.save(usuario);
+    }
 
     public List<Usuario> listarUsuarios() { return usuarioRepository.findAll(); }
 
@@ -30,5 +36,6 @@ public class UsuarioService {
     public List<Usuario> listarUsuariosOrdenadosPorNome() {
         return usuarioRepository.findAllByOrderByNomeCompletoAsc();
     }
+
 }
 
